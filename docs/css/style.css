@@ -580,6 +580,296 @@ input:checked ~ .subinfo-slide__in .view, input:checked ~ .subinfo-slide__in .na
   margin-top: 10px;
 }
 
+.worklist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 40px auto auto;
+  width: 90%;
+  max-width: 900px;
+}
+
+@media screen and (min-width: 769px) {
+  .worklist {
+    margin-top: 60px;
+  }
+}
+
+.worklist a {
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px #79797a;
+  border-radius: 3px;
+  color: #707070;
+  display: block;
+  margin-bottom: 30px;
+  position: relative;
+  width: calc(100%/2.05);
+}
+
+@media screen and (min-width: 769px) {
+  .worklist a {
+    width: calc(100%/4.3);
+    margin-bottom: 50px;
+  }
+}
+
+.worklist a::before {
+  background: url(../img/icon_stamp.svg);
+  content: "";
+  display: block;
+  height: 30px;
+  margin-left: -17px;
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  width: 30px;
+}
+
+@media screen and (min-width: 769px) {
+  .worklist a::before {
+    height: 40px;
+    margin-left: -20px;
+    top: -25px;
+    width: 40px;
+  }
+}
+
+.worklist a li {
+  padding: 15px 10px 15px;
+}
+
+.worklist a span {
+  display: block;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+}
+
+.worklist__img {
+  border: 1px solid #efefef;
+  margin-bottom: 15px;
+}
+
+.worklist__text {
+  font-size: 0.87rem;
+  line-height: 1.2;
+}
+
+#works h1 {
+  display: flex;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-size: 0.93rem;
+  align-items: center;
+  line-height: 36px;
+  width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  #works h1 {
+    font-size: 1rem;
+    line-height: 50px;
+  }
+}
+
+#works h1 a, #works h1 .nolink {
+  color: #3c3c3c;
+  display: block;
+  width: 75%;
+}
+
+#works h1 .workname {
+  background: #C5DBDA;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 769px) {
+  #works h1 .workname {
+    padding-right: 20vw;
+  }
+}
+
+#works h1 .workname svg {
+  height: 16px;
+  width: 16px;
+}
+
+#works h1 .fileno {
+  align-items: center;
+  background: #94CAC8;
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: flex-end;
+  padding-right: 10px;
+  width: 25%;
+}
+
+#works .maininfo {
+  margin: 20px auto auto;
+  max-width: 720px;
+  width: 88%;
+}
+
+#works .maininfo__info-text {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin: 25px auto 10px;
+  padding: 25px 0;
+}
+
+#works .maininfo__info-date {
+  display: flex;
+  font-size: 0.87rem;
+  justify-content: space-between;
+}
+
+#works .genre {
+  align-self: center;
+  background: #3c3c3c;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 0.75rem;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 8px;
+}
+
+#works .subinfo {
+  margin: 60px auto auto;
+}
+
+@media screen and (min-width: 769px) {
+  #works .subinfo {
+    width: 800px;
+  }
+}
+
+#works .sublist ul {
+  list-style: none;
+}
+
+@media screen and (min-width: 769px) {
+  #works .sublist ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #works .sublist ul::after {
+    width: calc(100%/2.05);
+    content: "";
+    display: block;
+  }
+}
+
+#works .sublist__item {
+  border: 1px solid;
+  border-radius: 3px;
+  margin: 40px auto;
+  padding: 30px 10px 10px;
+  position: relative;
+  width: 88%;
+}
+
+@media screen and (min-width: 769px) {
+  #works .sublist__item {
+    margin: 40px 0;
+    padding: 30px 20px 20px;
+    width: calc(100%/2.05);
+  }
+}
+
+#works .sublist__item::before {
+  background: rgba(150, 150, 150, 0.2);
+  content: "";
+  height: 30px;
+  left: 50%;
+  margin-left: -30px;
+  position: absolute;
+  top: -18px;
+  width: 60px;
+}
+
+#works .sublist__item:nth-child(odd)::before {
+  transform: rotate(-3deg);
+}
+
+#works .sublist__item:nth-child(even)::before {
+  transform: rotate(3deg);
+}
+
+#works .sublist__item-text {
+  padding: 10px 5px;
+}
+
+@media screen and (min-width: 769px) {
+  #works .sublist__item-text {
+    font-size: 0.87rem;
+    padding: 15px 0;
+  }
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #3c3c3c;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 25px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #94CAC8;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: -20px;
+}
+
+#gallery .caution {
+  color: #707070;
+  font-size: 0.87rem;
+  margin-top: 25px;
+  text-align: center;
+}
+
+#gallery ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-top: 40px;
+}
+
+#gallery li {
+  height: 60vh;
+  flex-grow: 1;
+}
+
+#gallery li:last-child {
+  flex-grow: 10;
+}
+
+@media (max-aspect-ratio: 16 / 9) {
+  #gallery li {
+    height: 30vh;
+  }
+}
+
+#gallery img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
 section {
   padding: 50px 0;
 }
@@ -844,275 +1134,7 @@ section {
   }
 }
 
-.worklist {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  margin: 40px auto auto;
-  width: 90%;
-  max-width: 900px;
-}
-
-@media screen and (min-width: 769px) {
-  .worklist {
-    margin-top: 60px;
-  }
-}
-
-.worklist a {
-  background-color: #ffffff;
-  box-shadow: 0 1px 2px #79797a;
-  border-radius: 3px;
-  color: #707070;
-  display: block;
-  margin-bottom: 30px;
-  position: relative;
-  width: calc(100%/2.05);
-}
-
-@media screen and (min-width: 769px) {
-  .worklist a {
-    width: calc(100%/4.3);
-    margin-bottom: 50px;
-  }
-}
-
-.worklist a::before {
-  background: url(../img/icon_stamp.svg);
-  content: "";
-  display: block;
-  height: 30px;
-  margin-left: -17px;
-  position: absolute;
-  left: 50%;
-  top: -15px;
-  width: 30px;
-}
-
-@media screen and (min-width: 769px) {
-  .worklist a::before {
-    height: 40px;
-    margin-left: -20px;
-    top: -25px;
-    width: 40px;
-  }
-}
-
-.worklist a li {
-  padding: 15px 10px 15px;
-}
-
-.worklist a span {
-  display: block;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
-  font-size: 0.75rem;
-  margin-bottom: 5px;
-}
-
-.worklist__img {
-  border: 1px solid #efefef;
-  margin-bottom: 15px;
-}
-
-.worklist__text {
-  font-size: 0.87rem;
-  line-height: 1.2;
-}
-
-#gallery ul {
-  column-count: 3;
-  column-gap: 0;
-  margin-top: 40px;
-  list-style: none;
-}
-
-#gallery .caution {
-  color: #707070;
-  font-size: 0.87rem;
-  margin-top: 25px;
-  text-align: center;
-}
-
 #lh #gallery, #lh #works {
   padding-top: 100px;
   padding-bottom: 0;
-}
-
-#works h1 {
-  display: flex;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
-  font-size: 0.93rem;
-  align-items: center;
-  line-height: 36px;
-  width: 100%;
-}
-
-@media screen and (min-width: 769px) {
-  #works h1 {
-    font-size: 1rem;
-    line-height: 50px;
-  }
-}
-
-#works h1 a, #works h1 .nolink {
-  color: #3c3c3c;
-  display: block;
-  width: 75%;
-}
-
-#works h1 .workname {
-  background: #C5DBDA;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-@media screen and (min-width: 769px) {
-  #works h1 .workname {
-    padding-right: 20vw;
-  }
-}
-
-#works h1 .workname svg {
-  height: 16px;
-  width: 16px;
-}
-
-#works h1 .fileno {
-  align-items: center;
-  background: #94CAC8;
-  display: flex;
-  font-size: 1.25rem;
-  justify-content: flex-end;
-  padding-right: 10px;
-  width: 25%;
-}
-
-#works .maininfo {
-  margin: 20px auto auto;
-  max-width: 720px;
-  width: 88%;
-}
-
-#works .maininfo__info-text {
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  margin: 25px auto 10px;
-  padding: 25px 0;
-}
-
-#works .maininfo__info-date {
-  display: flex;
-  font-size: 0.87rem;
-  justify-content: space-between;
-}
-
-#works .genre {
-  align-self: center;
-  background: #3c3c3c;
-  color: #ffffff;
-  display: inline-block;
-  font-size: 0.75rem;
-  height: 20px;
-  line-height: 20px;
-  padding: 0 8px;
-}
-
-#works .subinfo {
-  margin: 60px auto auto;
-}
-
-@media screen and (min-width: 769px) {
-  #works .subinfo {
-    width: 800px;
-  }
-}
-
-#works .sublist ul {
-  list-style: none;
-}
-
-@media screen and (min-width: 769px) {
-  #works .sublist ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  #works .sublist ul::after {
-    width: calc(100%/2.05);
-    content: "";
-    display: block;
-  }
-}
-
-#works .sublist__item {
-  border: 1px solid;
-  border-radius: 3px;
-  margin: 40px auto;
-  padding: 30px 10px 10px;
-  position: relative;
-  width: 88%;
-}
-
-@media screen and (min-width: 769px) {
-  #works .sublist__item {
-    margin: 40px 0;
-    padding: 30px 20px 20px;
-    width: calc(100%/2.05);
-  }
-}
-
-#works .sublist__item::before {
-  background: rgba(150, 150, 150, 0.2);
-  content: "";
-  height: 30px;
-  left: 50%;
-  margin-left: -30px;
-  position: absolute;
-  top: -18px;
-  width: 60px;
-}
-
-#works .sublist__item:nth-child(odd)::before {
-  transform: rotate(-3deg);
-}
-
-#works .sublist__item:nth-child(even)::before {
-  transform: rotate(3deg);
-}
-
-#works .sublist__item-text {
-  padding: 10px 5px;
-}
-
-@media screen and (min-width: 769px) {
-  #works .sublist__item-text {
-    font-size: 0.87rem;
-    padding: 15px 0;
-  }
-}
-
-.swiper-button-prev, .swiper-button-next {
-  color: #3c3c3c;
-}
-
-.swiper-button-prev {
-  left: 0;
-}
-
-.swiper-button-next {
-  right: 0;
-}
-
-.swiper-button-prev:after, .swiper-button-next:after {
-  font-size: 25px;
-}
-
-.swiper-pagination-bullet-active {
-  background: #94CAC8;
-}
-
-.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-  bottom: -20px;
 }
