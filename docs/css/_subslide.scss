@@ -1,0 +1,137 @@
+.subinfo-slide {
+  margin: auto;
+  padding: 40px 0;
+  min-height: 58vh;
+  position: relative;
+  width: 88%;
+  max-width: 600px;
+  @include media-pc {
+    min-height: 60vh;
+  }
+  &__in {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__in .view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: .5s;
+    z-index: 0;
+    animation: slide 35s infinite;/* (a+b)×c=x */
+    opacity: 0;
+  }
+  .view {
+      display: block;
+      width: 100%;
+      height: auto;
+  }
+  input{
+    display: none;
+  }
+  label {
+    .nav{
+      display: block;
+      width: 25px;
+      height: 25px;
+      padding: 7px;
+      margin:  58vh 0 0;
+      @include media-pc {
+        margin-top: 60vh;
+      }
+      border-radius: 100%;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+      &::before{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #999;
+        opacity: 0.5;
+        border-radius: 100%;
+        animation: slidebutton 35s infinite;
+      }
+    }
+  }
+  input:nth-of-type(1):checked ~ &__in label:nth-of-type(1) .nav::before,
+  input:nth-of-type(2):checked ~ &__in label:nth-of-type(2) .nav::before,
+  input:nth-of-type(3):checked ~ &__in label:nth-of-type(3) .nav::before,
+  input:nth-of-type(4):checked ~ &__in label:nth-of-type(4) .nav::before,
+  input:nth-of-type(5):checked ~ &__in label:nth-of-type(5) .nav::before,
+  input:nth-of-type(6):checked ~ &__in label:nth-of-type(6) .nav::before,
+  input:nth-of-type(7):checked ~ &__in label:nth-of-type(7) .nav::before,
+  input:nth-of-type(8):checked ~ &__in label:nth-of-type(8) .nav::before,
+  input:nth-of-type(9):checked ~ &__in label:nth-of-type(9) .nav::before,
+  input:nth-of-type(10):checked ~ &__in label:nth-of-type(10) .nav::before {
+      background: #3c3c3c;
+      opacity: 1;
+  }
+  @keyframes slidebutton{
+      0%{opacity: 0.5;background: #999;}
+      1.43%{opacity: 1;background: #3c3c3c;}/* b÷x×100=y */
+      10%{opacity: 1;background: #3c3c3c;}/* 100÷c=z */
+      11.43%{opacity: 0.5;background: #999;}/* y+z */
+  }
+  label:nth-of-type(2) .nav::before,label:nth-of-type(2) .view {
+      animation-delay: 3.5s;
+  }
+  label:nth-of-type(3) .nav::before,label:nth-of-type(3) .view {
+      animation-delay: 7s;
+  }
+  label:nth-of-type(4) .nav::before,label:nth-of-type(4) .view {
+      animation-delay: 10.5s;
+  }
+  label:nth-of-type(5) .nav::before,label:nth-of-type(5) .view {
+    animation-delay: 14s;
+  }
+  label:nth-of-type(6) .nav::before,label:nth-of-type(6) .view {
+    animation-delay: 17.5s;
+  }
+  label:nth-of-type(7) .nav::before,label:nth-of-type(7) .view {
+    animation-delay: 21s;
+  }
+  label:nth-of-type(8) .nav::before,label:nth-of-type(8) .view {
+    animation-delay: 24.5s;
+  }
+  label:nth-of-type(9) .nav::before,label:nth-of-type(9) .view {
+    animation-delay: 28s;
+  }
+  label:nth-of-type(10) .nav::before,label:nth-of-type(10) .view {
+    animation-delay: 31.5s;
+  }
+
+  input:nth-of-type(1):checked ~ &__in label:nth-of-type(1) .view,
+  input:nth-of-type(2):checked ~ &__in label:nth-of-type(2) .view,
+  input:nth-of-type(3):checked ~ &__in label:nth-of-type(3) .view,
+  input:nth-of-type(4):checked ~ &__in label:nth-of-type(4) .view,
+  input:nth-of-type(5):checked ~ &__in label:nth-of-type(5) .view,
+  input:nth-of-type(6):checked ~ &__in label:nth-of-type(6) .view,
+  input:nth-of-type(7):checked ~ &__in label:nth-of-type(7) .view,
+  input:nth-of-type(8):checked ~ &__in label:nth-of-type(8) .view,
+  input:nth-of-type(9):checked ~ &__in label:nth-of-type(9) .view,
+  input:nth-of-type(10):checked ~ &__in label:nth-of-type(10) .view {
+      opacity: 1;
+      z-index: 1;
+  }
+
+  @keyframes slide{
+      0%{opacity: 0;}
+      1.43%{opacity: 1;z-index: 1;}/* b÷x×100=y */
+      10%{opacity: 1;}/* 100÷c=z */
+      11.43%{opacity: 0;z-index: 0;}/* y+z */
+  }
+  input:checked ~ &__in .view,input:checked ~ &__in .nav::before{
+      animation: none;
+  }
+  &__in:hover .view,&__in:hover .nav::before{
+      animation-play-state:paused;/* マウスを載せると一時停止 */
+  }
+}
+.slide__text {
+  display: block;
+  margin-top: 10px;
+}
