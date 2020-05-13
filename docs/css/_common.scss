@@ -1,0 +1,395 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
+@font-face {
+  font-family: "rich";
+  src: url(../font/Rich.ttf) format("truetype");
+}
+
+// base
+ul, li, dl, dt, dd, h1 { margin: 0; padding: 0;}
+
+p {
+  margin-bottom: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #19BA95;
+  &:hover {
+    color: #67e5c8;
+    opacity: .8;
+    text-decoration: none;
+  }
+}
+
+img { max-width: 100%;}
+
+
+// iPad 横以上(PC)
+@mixin media-pc {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+// extend
+.sp-width {
+  margin: auto;
+  width: 82%;
+}
+
+
+// component
+$color-darkgray: #3c3c3c;
+$color-lightgray: #707070;
+$color-brightgreen: #19BA95;
+$color-darkgreen: #94CAC8;
+$color-lightgreen: #C5DBDA;
+$color-white: #ffffff;
+
+$font-m: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+
+$font-size-l: 1.8rem;
+$font-size-ml: 1.25rem;
+$font-size-m: .93rem;
+$font-size-s: .87rem;
+$font-size-ss: .75rem;
+
+$lh-padding: 100px;
+
+.backbtn, .more {
+  margin: 50px auto 20px;
+  @include media-pc {
+    margin: 50px auto;
+  }
+  a {
+    border: 1px solid $color-darkgray;
+    color: $color-darkgray;
+    display: block;
+    line-height: 40px;
+    margin: auto;
+    padding-right: 10px;
+    position: relative;
+    text-align: center;
+    width: 45%;
+    @include media-pc {
+      width: 30%;
+    }
+    &::after {
+      background: rgba(180,180,180, .3);
+      border-left: 1px solid;
+      font-family: "FontAwesome";
+      font-size: $font-size-ml;
+      padding: 0 7px;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+.more {
+  a::after {
+    content: "\f105";
+  }
+}
+.backbtn {
+  a::after {
+    content: "\f100";
+  }
+}
+
+.totop {
+  &__button {
+    border: 1px solid $color-darkgray;
+    border-radius: 50%;
+    color:$color-darkgray !important;
+    display: block;
+    height: 55px;
+    line-height: 60px;
+    margin: auto 3% 3% auto;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 90%;
+    text-align: center;
+    width: 55px;
+    &::before {
+      content: "\f106";
+      font-family: FontAwesome;
+      height: 18px;
+      line-height: 20px;
+      margin-left: -5px;
+      position: absolute;
+      left: 50%;
+    }
+  }
+}
+
+.tohome {
+  margin: 25px auto;
+  a {
+    color: $color-darkgray;
+    display: block;
+    height: 70px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    margin: auto;
+    position: relative;
+    width: 70px;
+    span {
+      position: absolute;
+      bottom: 15px;
+      left: 25%;
+    }
+  }
+}
+
+
+// modal
+.modal-wrapper {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  text-align: center;
+  z-index: 999;
+  &:not(:target) {
+    opacity: 0;
+    transition: opacity .3s, visibility .3s;
+    visibility: hidden;
+  }
+  &:target {
+    opacity: 1;
+    transition: opacity .4s, visibility .4s;
+    visibility: visible;
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    margin-left: -.05em;
+    vertical-align: middle;
+  }
+}
+
+.modal-content {
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 500px;
+  padding: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 90%;
+  z-index: 20;
+}
+
+.modal-body {
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, .8);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.modal-close {
+  border: 1px solid $color-white;
+  color: $color-white !important;
+  font-size: 30px;
+  font-weight: 700;
+  height: 30px;
+  line-height: 24px;
+  position: absolute;
+  right: 0;
+  bottom: -35px;
+  width: 30px;
+  z-index: 20;
+}
+
+// layout
+body {
+  background: url(../img/background.jpg) fixed;
+  background-size: cover;
+  color: #3c3c3c;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", Verdana, "メイリオ", Meiryo, sans-serif;
+  line-height: 1.4;
+  position: relative;
+}
+
+header {
+  background-color: rgba(255,255,255, .5);
+  display: flex;
+  height: 49px;
+  justify-content: space-between;
+  left: 0;
+  line-height: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  &::before {
+    border-top: 10px solid rgba(255,255,255, .5);
+    border-right: 100vw solid transparent;
+    bottom: -10px;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+  }
+  #siteid {
+    height: auto;
+    margin-left: 6%;
+    width: 70px;
+  }
+  nav {
+    ul {
+      list-style: none;
+      margin: 90px auto auto;
+      width: 80%;
+    }
+    li {
+      border-bottom: 1px solid $color-lightgray;
+    }
+    a {
+      color: $color-white;
+      display: block;
+      font-family: $font-m;
+      font-size: $font-size-ml;
+      line-height: 75px;
+      text-align: center;
+    }
+  }
+}
+
+.l-drawer {
+  position: relative;
+  &__checkbox {
+    display: none;
+  }
+  &__icon {
+    background-color: $color-darkgray;
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    position: fixed;
+    right: 0;
+    width: 60px;
+    &-parts,
+    &-parts::before,
+    &-parts::after {
+      background-color: $color-white;
+      bottom: 0;
+      display: block;
+      height: 2px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 25px;
+    }
+    &-parts::before,
+    &-parts::after {
+      content: "";
+    }
+    &-parts::before {
+      top: 15px;
+    }
+    &-parts::after {
+      top: -15px;
+    }
+    &::after {
+      border-top: 10px solid $color-darkgray;
+      border-left: 60px solid transparent;
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+    }
+  }
+  &__overlay {
+    background: $color-darkgray;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+  &__menu {
+    background: $color-darkgray;
+    color: $color-white;
+    height: 100vh;
+    max-width: 100%;
+    position: fixed;
+    right: -320px;
+    top: 0;
+    width: 320px;
+  }
+  &__icon {
+    z-index: 4;
+  }
+  &__menu {
+    z-index: 3;
+  }
+  &__overlay {
+    z-index: 2;
+  }
+  &__checkbox:checked ~ {
+    .l-drawer__icon {
+      .l-drawer__icon-parts {
+        background: transparent;
+      }
+      .l-drawer__icon-parts::before {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(45deg);
+        top: 0;
+      }
+      .l-drawer__icon-parts::after {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+    .l-drawer__overlay {
+      opacity: .5;
+      pointer-events: auto;
+    }
+    .l-drawer__menu {
+      right: 0;
+    }
+  }
+  &__icon-parts,
+  &__icon-parts::before,
+  &__icon-parts::after,
+  &__overlay,
+  &__menu {
+    -webkit-transition: all .7s;
+    transition: all .7s;
+  }
+}
+
+footer {
+  background: #efefef;
+  font-size: .8rem;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+}
