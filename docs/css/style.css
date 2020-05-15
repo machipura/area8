@@ -810,28 +810,9 @@ input:checked ~ .subinfo-slide__in .view, input:checked ~ .subinfo-slide__in .na
   }
 }
 
-.swiper-button-prev, .swiper-button-next {
-  color: #3c3c3c;
-}
-
-.swiper-button-prev {
-  left: 0;
-}
-
-.swiper-button-next {
-  right: 0;
-}
-
-.swiper-button-prev:after, .swiper-button-next:after {
-  font-size: 25px;
-}
-
-.swiper-pagination-bullet-active {
-  background: #94CAC8;
-}
-
-.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-  bottom: -20px;
+#slider {
+  margin: auto;
+  width: 88%;
 }
 
 #gallery .caution {
