@@ -878,6 +878,7 @@ section {
 @media screen and (min-width: 769px) {
   #mainvisual {
     background: url(../img/mainimage_l.jpg) center;
+    background-size: cover;
   }
 }
 
